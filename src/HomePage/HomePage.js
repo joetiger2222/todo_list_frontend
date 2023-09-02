@@ -8,7 +8,7 @@ export default function HomePage() {
   const {userId}=useParams();
   const [items, setItems] = useState([]);
   function getAllItems() {
-    fetch(`http://localhost:3001/api/todoList/${userId}`, {
+    fetch(`https://todo-list-hci6.onrender.com/api/todoList/${userId}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -24,7 +24,7 @@ export default function HomePage() {
       cancelButtonText: "No, keep it",
     }).then((res) => {
       if (res.isConfirmed) {
-        fetch(`http://localhost:3001/api/todoList/${itemId}`, {
+        fetch(`https://todo-list-hci6.onrender.com/api/todoList/${itemId}`, {
           method: "DELETE",
         }).then((res) => {
           if (res.ok) {
@@ -47,7 +47,7 @@ export default function HomePage() {
       },
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3001/api/todoList`, {
+        fetch(`https://todo-list-hci6.onrender.com/api/todoList`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -65,7 +65,7 @@ export default function HomePage() {
   }
 
   function checkUnCheck(itemId,isCheck){
-    fetch(`http://localhost:3001/api/todoList/${itemId}`,{
+    fetch(`https://todo-list-hci6.onrender.com/api/todoList/${itemId}`,{
       method:"PATCH",
       headers:{
         "Content-Type": "application/json",

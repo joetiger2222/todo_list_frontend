@@ -17,7 +17,7 @@ export default function Login() {
     }
     const formData={userName: userNameRef.current.value, password: passwordRef.current.value}
     
-    fetch(`http://localhost:3001/api/login`, {
+    fetch(`https://todo-list-hci6.onrender.com/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export default function Login() {
       });
       return;
     }
-    fetch(`http://localhost:3001/api/users`,{
+    fetch(`https://todo-list-hci6.onrender.com/api/users`,{
       method:"POST",
       headers:{
         "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export default function Login() {
         </div>
         <div className="inputLine">
           <label>Password</label>
-          <input ref={passwordRef} placeholder="Password..."></input>
+          <input ref={passwordRef} type="password" placeholder="Password..."></input>
         </div>
         <button onClick={login}>Login</button>
         <button onClick={register}>Register</button>
